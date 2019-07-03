@@ -11,6 +11,15 @@ function Player(canvas) {
     this.direction = 0;
     this.color = 'red';
   }
+
+  Player.prototype.checkScreen = function() {
+    if(this.x+this.width>=this.canvas.width){
+      this.setDirection(-1);
+    }else if(this.x<=0){
+      this.setDirection(1);
+    }
+  }
+
   Player.prototype.move = function() {
     this.x = this.x + this.direction * this.velocity;
   }

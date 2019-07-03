@@ -30,7 +30,7 @@ function createGameScreen() {
     `);
      var canvasElement = document.querySelector('canvas');
      var gameInstance = new Game(canvasElement);
-
+    
     
     // gameInstance.gameOverCallback(createGameOverScreen);
 
