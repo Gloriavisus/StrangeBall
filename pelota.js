@@ -15,13 +15,15 @@ function Pelota(canvas) {
 Pelota.prototype.checkScreen = function() {
   if(this.y+ this.ballradius>this.canvas.height){
     this.directionY= -this.directionY;
+    return true;
   }else if (this.y-this.ballradius<0){
     this.directionY= -this.directionY;
   }else if(this.x-this.ballradius<0){
     this.directionX=-this.directionX;
   }else if(this.x + this.ballradius>this.canvas.width){
-    this.directionX=-this.directionX;
+   this.directionX=-this.directionX;
   }
+  return false;
  };
 
  Pelota.prototype.checkPlayer = function(player){

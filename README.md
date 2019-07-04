@@ -1,7 +1,7 @@
 ##STRANGE BALL
 
 #DESCRIPCIÓN DEL JUEGO
-Juego popular de los 80s de arcade, similar al pong.
+Juego popular de los 80s de arcade ,llamado pong de un solo jugador.
 Consiste en tener una barra en la parte inferior y una pelota. El juego es que la pelota no puede tocar el suelo y tiene que ser golpeada por la barra. si ésta no llega tiempo la pelota toca el suelo y pierdes una vida.
 
 .main js

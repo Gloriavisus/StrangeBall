@@ -32,7 +32,7 @@ function createGameScreen() {
      var gameInstance = new Game(canvasElement);
 
     
-    // gameInstance.gameOverCallback(createGameOverScreen);
+    gameInstance.gameOverCallback(createGameOverScreen);
 
 
      gameInstance.startGame();
@@ -41,13 +41,13 @@ function createGameScreen() {
         gameInstance.player.setDirection(1)
     } else if(event.key==='ArrowLeft'){
         gameInstance.player.setDirection(-1)
-    }
-      
+    } 
     });
 
-   // setTimeout(createGameOverScreen, 3000);
+
   };
 
+    
 
   function createGameOverScreen() {
     var gameOverScreen = buildDom(`

@@ -13,7 +13,7 @@ Game.prototype.startGame = function () {
   this.pelota = new Pelota(this.canvas);
   var loop = () => {
     this.player.checkScreen();
-    this.pelota.checkScreen();
+    this.isGameOver = this.pelota.checkScreen();
     this.pelota.checkPlayer(this.player);
     this.update();
     this.clear();
