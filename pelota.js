@@ -5,11 +5,11 @@ function Pelota(canvas) {
   this.ctx = this.canvas.getContext('2d');
   this.x = 200;
   this.y = 20;
-  this.velocity = 2;
+  this.velocity = 3;
   this.color = 'black';
   this.directionX = 1;
   this.directionY = 1;
-  this.ballradius = 4;
+  this.ballradius = 5;
 }
 
 Pelota.prototype.checkScreen = function() {
@@ -24,10 +24,31 @@ Pelota.prototype.checkScreen = function() {
   }
  };
 
- Pelota.prototype.checkPlayer = function(){
-  if(this.y +this.ballradius>this.player){
-    this.directionY = -this.directionY;
+ Pelota.prototype.checkPlayer = function(player){
+  var distX = Math.abs(this.x - player.x - player.width/2);
+  var distY = Math.abs(this.y - player.y - player.height/2);
+
+  if(distX > (player.width/2 + this.ballradius)) {
+    return false
+  };
+  if(distY > (player.height/2 + this.ballradius)) {
+    return false;
+  } 
+
+  if(distX <= (player.width/2)) {
+    this.directionX=-this.directionX;
   }
+  if(distY <= (player.height/2)) {
+    this.directionY= -this.directionY;
+  }
+
+  var dx=distX-player.width/2;
+  var dy=distY-player.height/2;
+  if (dx*dx+dy*dy<=(this.ballradius*this.ballradius)) {
+    this.directionY= -this.directionY;
+    this.directionX=-this.directionX;
+  }
+    
 }
 
 Pelota.prototype.move = function() {
@@ -37,9 +58,8 @@ Pelota.prototype.move = function() {
  
 
 Pelota.prototype.draw = function() {
-  //ctx.clearRect(0, 0, canvas.width, canvas.height);
   this.ctx.beginPath();
-  this.ctx.arc(this.x,this.y,4,0,2*Math.PI,false);
+  this.ctx.arc(this.x,this.y,this.ballradius,0,2*Math.PI,false);
   this.ctx.fillStyle = this.color;
   this.ctx.fill();
 }

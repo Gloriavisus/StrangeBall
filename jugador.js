@@ -2,8 +2,8 @@
 function Player(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
-    this.height = 10;
-    this.width = 30;
+    this.height = 20;
+    this.width = 50;
     this.x = (this.canvas.width/2);
     this.y = (this.canvas.height -15);
     this.lives = 3;

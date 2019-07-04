@@ -14,7 +14,7 @@ Game.prototype.startGame = function () {
   var loop = () => {
     this.player.checkScreen();
     this.pelota.checkScreen();
-    this.pelota.checkPlayer();
+    this.pelota.checkPlayer(this.player);
     this.update();
     this.clear();
     this.draw();
