@@ -13,6 +13,8 @@ Game.prototype.startGame = function () {
   this.pelota = new Pelota(this.canvas);
   var loop = () => {
     this.player.checkScreen();
+    this.pelota.checkScreen();
+    this.pelota.checkPlayer();
     this.update();
     this.clear();
     this.draw();
@@ -42,7 +44,6 @@ Game.prototype.draw = function () {
 }
 
 Game.prototype.checkCollisions = function () {
-
 }
 
 Game.prototype.gameOverCallback = function (callback) {

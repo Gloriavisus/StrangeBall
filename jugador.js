@@ -7,7 +7,7 @@ function Player(canvas) {
     this.x = (this.canvas.width/2);
     this.y = (this.canvas.height -15);
     this.lives = 3;
-    this.velocity = 3;
+    this.velocity = 2;
     this.direction = 0;
     this.color = 'red';
   }
