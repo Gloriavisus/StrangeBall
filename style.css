@@ -23,7 +23,7 @@ html {
   
   canvas {
     border: 2px solid black;
-    background-color: rgba(147,206,222,1);
+    background-image: url(espaciofondo.jpg);
     margin-top: 150px;
   }
   button{
