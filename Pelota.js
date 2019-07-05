@@ -6,7 +6,7 @@ function Pelota(canvas) {
   this.x = 200;
   this.y = 20;
   this.velocity = 3;
-  this.color = 'black';
+  this.color = 'white';
   this.directionX = 1;
   this.directionY = 1;
   this.ballradius = 5;
